@@ -7,3 +7,18 @@ console.log("Hello world!!!!!!!");
 //   listen in for commands
 //   if get command:
 //       do thing :)
+import * as Discord from "discord.js";
+
+let token = "";
+if (process.argv.length > 2) {
+  token = process.argv[2];
+}
+
+let disc = new Discord.Client();
+
+disc.once('ready', () => {
+  console.log("client ready...");
+  console.log("token is... " + token);  
+});
+
+disc.login('tokytoky');
